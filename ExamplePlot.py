@@ -14,10 +14,11 @@ import seaborn as sns
 df=pd.read_csv('unrestricted_hcp_freesurfer.csv')
 
 # plot distribution
-sns.distplot(df.FS_3rdVent_Vol)
-#plt.savefig('distExample.eps')
+sns_dist = sns.distplot(df.FS_3rdVent_Vol)
+# save a figure
+sns_dist.savefig('distExample2.eps')
 
 # load example small data set 
 iris = sns.load_dataset("iris")  ## Rでお馴染みのアヤメの統計データ
-sns.pairplot(iris, hue="species")
-
+sns_pair = sns.pairplot(iris, hue="species")
+sns_pair.savefig('pairExample.eps')
